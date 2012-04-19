@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 
-namespace ExcelToXml.Excel
+namespace ExcelToXml.TableReader
 {
-    internal interface IExcel : IDisposable
+    internal interface ITableReader
     {
         IEnumerable<ITable> GetTables();
     }

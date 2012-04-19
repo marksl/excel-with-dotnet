@@ -1,14 +1,13 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
-using ExcelToXml.Excel;
-using ExcelToXml.ExcelConnector;
+using ExcelToXml.ExcelReader;
+using ExcelToXml.Tables;
+using ExcelToXml.XmlWriter;
 
 namespace ExcelToXml
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             if (args.Length != 2)
             {
@@ -18,28 +17,17 @@ namespace ExcelToXml
             }
 
             string excelFileName = args[0];
-            string xmlFile = args[1];
+            string xmlFileName = args[1];
 
-            var excelFile = new FileInfo(excelFileName);
-            if (!excelFile.Exists)
+            using (var reader = new ExcelFileReader(excelFileName))
             {
-                Console.Out.WriteLine("{0} does not exist. Please enter another file.", excelFileName);
-                return;
-            }
+                var tables = CompaniesUsersAddresses.LoadFrom(reader);
 
-            using (var p = ExcelFactory.GetExcel(excelFile))
-            {
-                foreach (ITable table in p.GetTables())
-                {
-                    if (table.Name == "Companies")
-                    {
-                        var c = new CompanyParser().GetAll(table).ToArray();
-                        if (c != null)
-                        {
+                var xmlEntityRepository = new XmlEntityRepository();
+                var xmlEntityMapper = new XmlEntityMapper(xmlEntityRepository);
+                var writer = new XmlFileWriter(xmlFileName, xmlEntityMapper);
 
-                        }
-                    }
-                }
+                writer.WriteToFile(tables);
             }
         }
     }

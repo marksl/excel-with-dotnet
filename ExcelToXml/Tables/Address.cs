@@ -1,6 +1,6 @@
-﻿namespace ExcelToXml.Excel
+﻿namespace ExcelToXml.Tables
 {
-    public class Address
+    internal class Address
     {
         public int UserId { get; set; }
         public int Id { get; set; }

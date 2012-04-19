@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<ArrayOfCompany xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Company>
+    <Name>ABC Company</Name>
+    <Address>22 Cambie Street</Address>
+    <City>Vancouver</City>
+    <Country>Canada</Country>
+    <Users>
+      <User>
+        <FirstName>John</FirstName>
+        <LastName>Doe</LastName>
+        <Addresses>
+          <Address>
+            <Email>mark@gmail.com</Email>
+          </Address>
+          <Address>
+            <Email>steve@gmail.com</Email>
+          </Address>
+        </Addresses>
+      </User>
+      <User>
+        <FirstName>Suzy</FirstName>
+        <LastName>S</LastName>
+        <Addresses>
+          <Address>
+            <Email>tom@hotmail.com</Email>
+          </Address>
+          <Address>
+            <Email>ryan@foo.com</Email>
+          </Address>
+        </Addresses>
+      </User>
+      <User>
+        <FirstName>Ryan</FirstName>
+        <LastName>Fudge</LastName>
+        <Addresses>
+          <Address>
+            <Email>dog@bar.com</Email>
+          </Address>
+        </Addresses>
+      </User>
+      <User>
+        <FirstName>Kevin</FirstName>
+        <LastName>Hodge</LastName>
+        <Addresses>
+          <Address>
+            <Email>bear@bar.com</Email>
+          </Address>
+        </Addresses>
+      </User>
+    </Users>
+  </Company>
+  <Company>
+    <Name>Bright Records</Name>
+    <Address>10 Central Park</Address>
+    <City>New York</City>
+    <Country>United States</Country>
+    <Users>
+      <User>
+        <FirstName>Alec</FirstName>
+        <LastName>Smek</LastName>
+        <Addresses>
+          <Address>
+            <Email>tiger@bar.com</Email>
+          </Address>
+        </Addresses>
+      </User>
+      <User>
+        <FirstName>Tommy</FirstName>
+        <LastName>Shoe</LastName>
+        <Addresses />
+      </User>
+    </Users>
+  </Company>
+</ArrayOfCompany>

@@ -1,17 +1,17 @@
 ﻿using System;
-using ExcelToXml.Excel;
+using ExcelToXml.TableReader;
 using OfficeOpenXml;
 
-namespace ExcelToXml.ExcelConnector
+namespace ExcelToXml.ExcelReader
 {
-    internal class TableAdapter : ITable
+    internal class ExcelWorksheetAdapter : ITable
     {
         private readonly ExcelWorksheet _workSheet;
 
-        public TableAdapter(ExcelWorksheet workSheet)
+        public ExcelWorksheetAdapter(ExcelWorksheet workSheet)
         {
             if (workSheet == null) throw new ArgumentNullException("workSheet");
-
+            
             _workSheet = workSheet;
         }
 
@@ -22,7 +22,7 @@ namespace ExcelToXml.ExcelConnector
 
         public int FirstColumn
         {
-            get { return _workSheet.Dimension.Start.Column; }
+            get { return _workSheet.Dimension.Start.Column - 1; }
         }
 
         public int LastColumn
@@ -32,7 +32,7 @@ namespace ExcelToXml.ExcelConnector
 
         public int FirstRow
         {
-            get { return _workSheet.Dimension.Start.Column; }
+            get { return _workSheet.Dimension.Start.Column - 1; }
         }
 
         public int LastRow
@@ -42,7 +42,7 @@ namespace ExcelToXml.ExcelConnector
 
         public object GetValue(int row, int column)
         {
-            return _workSheet.Cells[row, column].Value;
+            return _workSheet.Cells[row + 1, column + 1].Value;
         }
     }
 }

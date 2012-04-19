@@ -1,4 +1,4 @@
-namespace ExcelToXml.Excel
+namespace ExcelToXml.TableReader
 {
     internal interface ITable
     {

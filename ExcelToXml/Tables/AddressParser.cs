@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using ExcelToXml.TableReader;
 
-namespace ExcelToXml.Excel
+namespace ExcelToXml.Tables
 {
     internal class AddressParser : Parser<Address>
     {

@@ -39,30 +39,36 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExcelConnector\ExcelAdapter.cs" />
-    <Compile Include="ExcelConnector\ExcelFactory.cs" />
-    <Compile Include="ExcelConnector\TableAdapter.cs" />
-    <Compile Include="Excel\Address.cs" />
-    <Compile Include="Excel\AddressParser.cs" />
-    <Compile Include="Excel\Company.cs" />
-    <Compile Include="Excel\CompanyParser.cs" />
-    <Compile Include="Excel\IExcel.cs" />
-    <Compile Include="Excel\ITable.cs" />
-    <Compile Include="Excel\Parser.cs" />
-    <Compile Include="Excel\UserParser.cs" />
+    <Compile Include="ExcelReader\ExcelFileReader.cs" />
+    <Compile Include="ExcelReader\ExcelWorksheetAdapter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Excel\User.cs" />
+    <Compile Include="Tables\Address.cs" />
+    <Compile Include="Tables\AddressParser.cs" />
+    <Compile Include="Tables\Company.cs" />
+    <Compile Include="Tables\CompanyParser.cs" />
+    <Compile Include="TableReader\ITable.cs" />
+    <Compile Include="TableReader\ITableReader.cs" />
+    <Compile Include="TableReader\Parser.cs" />
+    <Compile Include="Tables\CompaniesUsersAddresses.cs" />
+    <Compile Include="Tables\User.cs" />
+    <Compile Include="Tables\UserParser.cs" />
+    <Compile Include="XmlWriter\IEntityRepository.cs" />
+    <Compile Include="XmlWriter\XmlEntityRepository.cs" />
+    <Compile Include="XmlWriter\XmlMappingExtensions.cs" />
+    <Compile Include="XmlWriter\XmlEntityMapper.cs" />
+    <Compile Include="XmlWriter\Address.cs" />
+    <Compile Include="XmlWriter\Company.cs" />
+    <Compile Include="XmlWriter\User.cs" />
+    <Compile Include="XmlWriter\XmlFileWriter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

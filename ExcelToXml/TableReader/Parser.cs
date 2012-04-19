@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ExcelToXml.Excel
+namespace ExcelToXml.TableReader
 {
     internal abstract class Parser<T> where T : class, new()
     {
@@ -15,7 +15,7 @@ namespace ExcelToXml.Excel
             int firstRow = table.FirstRow + 1;
             int lastRow = table.LastRow;
 
-            for (int row = firstRow; row <= lastRow; row++)
+            for (int row = firstRow; row < lastRow; row++)
             {
                 T entity = CreateEntity();
 
@@ -43,15 +43,15 @@ namespace ExcelToXml.Excel
         {
             var headers = new Dictionary<string, int>();
 
-            const int row = 1;
+            const int headerRow = 0;
 
             int firstColumn = table.FirstColumn;
             int lastColumn = table.LastColumn;
 
-            for (int column = firstColumn; column <= lastColumn; column++)
+            for (int column = firstColumn; column < lastColumn; column++)
             {
                 // This assumes the first row is all string values
-                var headerName = (string) table.GetValue(row, column);
+                var headerName = (string) table.GetValue(headerRow, column);
 
                 headers.Add(headerName, column);
             }
@@ -59,8 +59,8 @@ namespace ExcelToXml.Excel
             return headers;
         }
 
-        private static void ApplyCellValue(Dictionary<string, Action<object, T>> functions, T entity, string headerName,
-                                    object value)
+        private static void ApplyCellValue(IDictionary<string, Action<object, T>> functions,
+            T entity, string headerName, object value)
         {
             if (functions.ContainsKey(headerName))
             {
