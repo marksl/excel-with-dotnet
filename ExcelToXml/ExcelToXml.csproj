@@ -46,15 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EPPlus\ExcelAdapter.cs" />
-    <Compile Include="EPPlus\ExcelFactory.cs" />
-    <Compile Include="EPPlus\TableAdapter.cs" />
+    <Compile Include="ExcelConnector\ExcelAdapter.cs" />
+    <Compile Include="ExcelConnector\ExcelFactory.cs" />
+    <Compile Include="ExcelConnector\TableAdapter.cs" />
     <Compile Include="Excel\Address.cs" />
+    <Compile Include="Excel\AddressParser.cs" />
     <Compile Include="Excel\Company.cs" />
     <Compile Include="Excel\CompanyParser.cs" />
-    <Compile Include="EPPlus\IExcel.cs" />
-    <Compile Include="EPPlus\ITable.cs" />
+    <Compile Include="Excel\IExcel.cs" />
+    <Compile Include="Excel\ITable.cs" />
     <Compile Include="Excel\Parser.cs" />
+    <Compile Include="Excel\UserParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Excel\User.cs" />

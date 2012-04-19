@@ -1,6 +1,7 @@
 using System.IO;
+using ExcelToXml.Excel;
 
-namespace ExcelToXml.EPPlus
+namespace ExcelToXml.ExcelConnector
 {
     internal class ExcelFactory
     {

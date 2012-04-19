@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ExcelToXml.EPPlus
+namespace ExcelToXml.Excel
 {
     internal interface IExcel : IDisposable
     {

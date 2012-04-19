@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using ExcelToXml.Excel;
 using OfficeOpenXml;
 
-namespace ExcelToXml.EPPlus
+namespace ExcelToXml.ExcelConnector
 {
     internal class ExcelAdapter : IExcel
     {

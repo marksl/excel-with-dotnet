@@ -1,7 +1,8 @@
 ﻿using System;
+using ExcelToXml.Excel;
 using OfficeOpenXml;
 
-namespace ExcelToXml.EPPlus
+namespace ExcelToXml.ExcelConnector
 {
     internal class TableAdapter : ITable
     {

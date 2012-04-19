@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using ExcelToXml.EPPlus;
 
 namespace ExcelToXml.Excel
 {
@@ -60,7 +59,7 @@ namespace ExcelToXml.Excel
             return headers;
         }
 
-        private void ApplyCellValue(Dictionary<string, Action<object, T>> functions, T entity, string headerName,
+        private static void ApplyCellValue(Dictionary<string, Action<object, T>> functions, T entity, string headerName,
                                     object value)
         {
             if (functions.ContainsKey(headerName))

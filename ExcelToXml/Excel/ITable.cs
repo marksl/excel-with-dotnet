@@ -1,4 +1,4 @@
-namespace ExcelToXml.EPPlus
+namespace ExcelToXml.Excel
 {
     internal interface ITable
     {
